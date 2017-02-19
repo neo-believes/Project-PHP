@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/amanNew.css">
+</head>
+<body>
+
+<div class='w3-container top'>
+<P class='w3schools-logo' >DaiLY MEals</P>
+<div class='w3-right toptext w3-wide'>Much Needed Freedom</div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="home.php">Home</a></li>
+       
+        <li><a href="menu.php">Menu</a></li>
+        <li><a href="about_us.php">About US</a></li>
+	    <li><a href="contact_us.php">Contact Us</a></li>
+      </ul>
+	  <ul class="nav navbar-nav navbar-right">
+	  <?php
+	  if (isset($_SESSION['username']))
+	  { ?>
+	  
+      <li style="color:#ffffff; padding:08px 0 0 0;font-size:20px;"> Hey <?php echo $_SESSION['username'];?>!</li>
+	        <li style="font-size:18px;" ><a href="sign_out.php">Log Out</a></li><?php 
+	  }
+	  else{?> 
+        <li><a href="registration_form.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    
+<?php } ?>    </ul> </div>
+  </div>
+</nav>
+
+</body>
+</html>
+
